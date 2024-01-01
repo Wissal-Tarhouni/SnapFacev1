@@ -1,0 +1,37 @@
+<div class="face-snap-card" [ngClass]="{snapped: buttonText === 'Ooups,snaps' }">
+  <!-- La configuration pipe signifie :
+au moins un chiffre pour les entiers 
+minimum 0 chiffres après la virgule et
+ maximum 0 chiffres (Angular arrondira donc à l'entier le plus proche). -->
+ 
+ <!-- <p>{{ 4346234.36 | number }}</p>
+  <p>{{ 4346234.36 | number: '1.0-0' }}</p> -->
+
+  <!-- Pour transformer des nombres entre 0 et 1 en pourcentage
+   (ex. : 0.4 = 40 %), il suffit d'utiliser PercentPipe  -->
+   <!-- PercentPipe arrondit par défaut les pourcentages à l'entier le plus proche. 
+   Vous pouvez cependant le configurer de la même manière que DecimalPipe : -->
+   <!-- <p>{{ 0.336 | percent }}</p>
+
+   <p>{{ 0.336 | percent: '1.0-1' }}</p> -->
+  <!--  le resultat dAngular nous affiche bien 33,6 % -->
+
+  <!-- Quand les nombres dans votre application correspondent à des montants d'argent,
+   CurrencyPipe facilite leur affichage.
+    Si vous utilisez l'affichage par défaut :  -->
+    <!-- <p>{{ 344.36 | currency }}</p>
+    <! Vous pouvez configurer la monnaie à afficher : -->
+  <!-- Le montant est affiché en euros, € -->
+  --------------------------------------------------------
+  <!-- Vous pouvez passer un deuxième argument qui permet d'afficher le code de la monnaie plutôt que son symbole. Pour passer un deuxième argument à un pipe, on remet un deux-points 
+   :  et on passe le deuxième argument : -->
+   <!-- <p>{{ 344.36 | currency: 'EUR' : 'code' }}</p> -->
+<!-- cela nous affiche :
+   Le montant est affiché suivi de EUR plutôt que le symbole € 344,36 EUR-->
+
+  <h2>{{ facesnap.title |titlecase }}</h2>
+    <p>Mis en ligne  {{ facesnap.createDate|date : 'le d MMMM yyyy,à HH:mm' }}</p>
+    <p>{{ facesnap.description }}</p>
+    <button (click)="onViewFaceSnap()">VIEW</button>
+ 
+  </div>
